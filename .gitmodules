@@ -1,0 +1,6 @@
+[submodule "stb"]
+	path = stb
+	url = https://github.com/nothings/stb.git
+[submodule "utest.h"]
+	path = utest
+	url = https://github.com/sheredom/utest.h.git
