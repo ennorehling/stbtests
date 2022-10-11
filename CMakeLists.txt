@@ -1,5 +1,11 @@
 cmake_minimum_required(VERSION 3.22)
 project(stbtests C)
 include_directories(stb utest)
+enable_testing()
 
-add_executable(stb_ds main.c tests/stb_ds.c)
+file(GLOB tests "tests/*.c")
+foreach(filename ${tests})
+	cmake_path(GET filename FILENAME test)
+	add_executable(${test} main.c ${filename})
+	add_test(NAME ${test} COMMAND ${test})
+endforeach()
